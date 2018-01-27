@@ -549,6 +549,7 @@ MonoBehaviour:
   closeTime: 3
   holdOpenTime: 15
   heldTime: 0
+  BC: {fileID: 65455881976111896}
   mode: 0
   amountClosed: 1
 --- !u!114 &114566615517265310

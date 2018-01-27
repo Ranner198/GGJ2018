@@ -11,6 +11,7 @@ public class ShieldSegment : MonoBehaviour {
     public float closeTime;
     public float holdOpenTime;
     public float heldTime;
+    public BoxCollider BC;
     public enum Mode
     {
         None,
@@ -21,11 +22,7 @@ public class ShieldSegment : MonoBehaviour {
     public Mode mode;
     public float amountClosed = 1.0f;
 
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
+
 	void Update () {
         // Rotate the shield segment
         transform.rotation *= Quaternion.Euler(0, 0, ring.rotateSpeed * Time.deltaTime);
@@ -38,6 +35,7 @@ public class ShieldSegment : MonoBehaviour {
             case Mode.None:
                 break;
             case Mode.Opening:
+                BC.enabled = false;
                 amountClosed -= openSpeed;
                 if (amountClosed < 0.0f)
                 {
@@ -47,6 +45,7 @@ public class ShieldSegment : MonoBehaviour {
                 }
                 break;
             case Mode.Closing:
+                BC.enabled = true;
                 amountClosed += closeSpeed;
                 if (amountClosed >= 1.0f)
                 {
