@@ -10,7 +10,7 @@ public class RayTrace : MonoBehaviour {
     public LineRenderer lr;
 
     public Text Upload;
-    public float UploadPercentage;
+    public static float UploadPercentage;
 
     void Start()
     {
