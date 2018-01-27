@@ -511,7 +511,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ring: {fileID: 1652997638702172, guid: d52db81f1b4f57641a45d8591baf9c80, type: 2}
   canPing: 0
-  timer: -99
+  timer: 0
+  totalCount: 3
 --- !u!1001 &901814136
 Prefab:
   m_ObjectHideFlags: 0

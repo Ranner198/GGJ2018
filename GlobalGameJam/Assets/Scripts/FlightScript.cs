@@ -40,8 +40,6 @@ public class FlightScript : MonoBehaviour {
         //Distance from Ship
         Vector2 currentDistance = transform.position - MainShip.transform.position;
 
-        print(currentDistance.magnitude);
-
         if (currentDistance.magnitude > MaxDistance)
         {
             rb.AddForce(-currentDistance * 10);

@@ -27,7 +27,6 @@ public class ShieldSegment : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("Rotate");
 
         // Rotate the shield segment
         transform.rotation *= Quaternion.Euler(0, 0, ring.rotateSpeed * Time.deltaTime);
