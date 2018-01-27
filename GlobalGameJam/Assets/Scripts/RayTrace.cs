@@ -12,10 +12,17 @@ public class RayTrace : MonoBehaviour {
     public Text Upload;
     public static float UploadPercentage;
 
+    public ParticleSystem PS;
+
     void Start()
     {
         //Default
         Upload.text = "Upload: " + Mathf.RoundToInt(UploadPercentage).ToString() + "%";
+
+        PS = GetComponent<ParticleSystem>();
+
+        PS.enableEmission = false;
+
     }
 
 	void Update () {
@@ -33,10 +40,13 @@ public class RayTrace : MonoBehaviour {
                 UploadPercentage += .25f;
 
                 Upload.text = "Upload: " + Mathf.RoundToInt(UploadPercentage).ToString() + "%";
+
+                PS.enableEmission = true;
             }
             else
             {
                 lr.enabled = false;
+                PS.enableEmission = false;
             }
         }    
     }
