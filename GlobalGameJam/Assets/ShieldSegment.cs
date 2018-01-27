@@ -27,8 +27,6 @@ public class ShieldSegment : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("Rotate");
-
         // Rotate the shield segment
         transform.rotation *= Quaternion.Euler(0, 0, ring.rotateSpeed * Time.deltaTime);
 
@@ -44,6 +42,7 @@ public class ShieldSegment : MonoBehaviour {
                 if (amountClosed < 0.0f)
                 {
                     mode = Mode.HeldOpen;
+                    heldTime = holdOpenTime;
                     amountClosed = 0.0f;
                 }
                 break;
@@ -52,7 +51,7 @@ public class ShieldSegment : MonoBehaviour {
                 if (amountClosed >= 1.0f)
                 {
                     mode = Mode.None;
-                    holdOpenTime = heldTime;
+                    heldTime = holdOpenTime;
                     amountClosed = 1.0f;
                 }
                 break;
@@ -72,6 +71,13 @@ public class ShieldSegment : MonoBehaviour {
         v = colliderRight.transform.localScale;
         v[0] = amountClosed;
         colliderRight.transform.localScale = v;
+    }
 
+    public void SetToOpening()
+    {
+        if (mode == Mode.None)
+        {
+            mode = Mode.Opening;
+        }
     }
 }
