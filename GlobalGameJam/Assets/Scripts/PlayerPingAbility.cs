@@ -10,14 +10,14 @@ public class PlayerPingAbility : MonoBehaviour {
 
     public float timer;
 
-    public MeshCollider ConeTrigger;
+    public BoxCollider ConeTrigger;
 
     private int count = 0;
     public int totalCount;
 
     void Start()
     {
-        ConeTrigger = GetComponent<MeshCollider>();
+        ConeTrigger = GetComponent<BoxCollider>();
         ConeTrigger.enabled = false;
     }
 
@@ -25,14 +25,16 @@ public class PlayerPingAbility : MonoBehaviour {
 
         if (timer >= 0)
         {
-            ConeTrigger.enabled = false;
             timer -= Time.deltaTime;
         }
 
         if (timer <= 0)
         {
-            canPing = true;
+            canPing = true;          
         }
+
+        if (timer <= 1.5f)
+            ConeTrigger.enabled = false;
 
         if (Input.GetKeyDown(KeyCode.Space) && canPing == true)
         {

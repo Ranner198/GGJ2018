@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShieldSegment : MonoBehaviour {
+
     public ShieldRing ring;
     public GameObject colliderLeft;
     public GameObject colliderRight;
@@ -22,7 +23,6 @@ public class ShieldSegment : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame

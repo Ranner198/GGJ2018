@@ -11,7 +11,7 @@ public class Pinged : MonoBehaviour {
     public bool isVisible = false;
     public float timer;
 
-	void Start () {
+    void Start () {
         /*
         left = gameObject.GetComponent<BoxCollider>();
         right = gameObject.GetComponent<BoxCollider>();
@@ -19,6 +19,7 @@ public class Pinged : MonoBehaviour {
 
         Left = Collider_Left.GetComponent<Renderer>();
         Left.enabled = false;
+
         Right = Collider_Right.GetComponent<Renderer>();
         Right.enabled = false;
     }
@@ -29,23 +30,31 @@ public class Pinged : MonoBehaviour {
         if (timer >= 0)
         {
             timer -= Time.deltaTime;
+        }
+       
+        if (timer <= 0)
+        {
+            isVisible = false;
+        }
+
+        if (isVisible == true)
+        {
             Left.enabled = true;
             Right.enabled = true;
         }
-
-        if (timer <= 0)
+        else
         {
             Left.enabled = false;
             Right.enabled = false;
         }
-
     }
 
-    void OnCollisionEnter(Collision coll)
-    {
-        if (coll.gameObject.tag == "Ring")
+    void OnTriggerEnter(Collider coll)
+    {       
+        if (coll.gameObject.tag == ("Ring"))
         {
             timer = 1.5f;
+            isVisible = true;
         }
     }
 }
