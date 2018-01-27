@@ -6,8 +6,6 @@ public class EnemyFlightScript : MonoBehaviour {
 
     public Rigidbody rb;
 
-    private Vector3 distance;
-
     public Transform Player;
 
 	void Start () {
@@ -18,10 +16,11 @@ public class EnemyFlightScript : MonoBehaviour {
     void Update() {
         float _distance = (transform.position - Player.transform.position).magnitude;
 
-        print(_distance);
         if (_distance > 3)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, .1f);
+            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, .05f);
         }
+
+        //transform.LookAt(Player.transform.position, Vector2.up);
     }
 }
