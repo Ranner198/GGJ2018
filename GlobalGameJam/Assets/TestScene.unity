@@ -753,7 +753,8 @@ MonoBehaviour:
   numSegments: 25
   segmentPrefab: {fileID: 1398468894258406, guid: afb9133b614471c428cc0013ca39419f,
     type: 2}
-  rotateSpeed: 30
+  rotateSpeed: 10
+  timeBetweenOpenings: 5
 --- !u!4 &1795084441
 Transform:
   m_ObjectHideFlags: 0

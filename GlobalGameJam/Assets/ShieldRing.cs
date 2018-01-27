@@ -6,11 +6,14 @@ public class ShieldRing : MonoBehaviour {
     public float numSegments;
     public GameObject segmentPrefab;
     public float rotateSpeed;
+    public float timeBetweenOpenings;
+    private float timeTilOpen;
 
     // Use this for initialization
     void OnEnable()
     {
         CreateRing();
+        timeTilOpen = timeBetweenOpenings;
     }
 
     void CreateRing()
@@ -26,9 +29,29 @@ public class ShieldRing : MonoBehaviour {
         }
     }
 
+    void OpenRandomShieldSegment()
+    {
+        int n = Random.Range(0, transform.childCount - 1);
+        foreach(Transform child in transform)
+        {
+            if (n == 0)
+            {
+                child.GetComponent<ShieldSegment>().SetToOpening();
+                break;
+            }
+            n--;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-
+        timeTilOpen -= Time.deltaTime;
+        if (timeTilOpen < 0.0f)
+        {
+            timeTilOpen = timeBetweenOpenings;
+            // Trigger a new opening
+            OpenRandomShieldSegment();
+        }
     }
 }
