@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 65816389077666366}
   - component: {fileID: 23817349908907364}
   - component: {fileID: 54916931866532464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShieldCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 65597373098332598}
   - component: {fileID: 23506594372753190}
   - component: {fileID: 54235723673079496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShieldCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
