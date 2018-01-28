@@ -339,6 +339,7 @@ MonoBehaviour:
   Name: {fileID: 0}
   PlaceHolder: {fileID: 0}
   _Name: 
+  anim: {fileID: 0}
 --- !u!4 &1385531999
 Transform:
   m_ObjectHideFlags: 0
@@ -365,7 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rt: {fileID: 602325828}
   startScale: 0.45
-  endScale: 0.55
+  endScale: 0.5
   timeLimit: 1.2
   image: {fileID: 602325829}
 --- !u!1 &1409983678

@@ -22,9 +22,11 @@ public class GameManager : MonoBehaviour {
     AudioSource audioSource;
 
     public ShieldRing shieldRing;
+    public static bool spinning = false;
 
     void Start() {
         audioSource = GetComponent<AudioSource>();
+        spinning = false;
     }
 
 	void Update () {
