@@ -3173,7 +3173,7 @@ Canvas:
   m_GameObject: {fileID: 701382714}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1840269791}
   m_PlaneDistance: 10
   m_PixelPerfect: 0
@@ -3952,6 +3952,7 @@ GameObject:
   - component: {fileID: 1315050411}
   - component: {fileID: 1315050410}
   - component: {fileID: 1315050409}
+  - component: {fileID: 1315050414}
   m_Layer: 0
   m_Name: Camera3D
   m_TagString: MainCamera
@@ -4027,6 +4028,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -52, y: 0, z: 0}
+--- !u!114 &1315050414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1315050408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf17d57d0a3580c428fe09c9a23bebe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerLocation: {fileID: 707287960}
+  MotherShipLocation: {fileID: 219229905}
+  percentAwayFromMother: 0.25
 --- !u!1 &1518067071
 GameObject:
   m_ObjectHideFlags: 0
