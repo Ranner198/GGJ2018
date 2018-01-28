@@ -53,7 +53,5 @@ public class RayTrace : MonoBehaviour {
             }
         }
 
-        lr.SetPosition(0, transform.position);
-        lr.enabled = true;
     }
 }
