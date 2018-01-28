@@ -58,7 +58,7 @@ public class Explosion : MonoBehaviour {
         yield return new WaitForSeconds(4);
         GameManager.hasLost = false;
         isDead = false;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("TestScene");
     }
 
     IEnumerator Flash()

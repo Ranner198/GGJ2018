@@ -323,8 +323,8 @@ MonoBehaviour:
   anim: {fileID: 219229906}
   lastSpeed: 1
   timeUpdate: 0
-  numberShotsInRing: 20
-  bulletPrefab: {fileID: 1820741785558866, guid: 6167ea4cf9cc0ab4bb0d40a8bb103607,
+  numberShotsInRing: 16
+  bulletPrefab: {fileID: 1123574017255252, guid: b03d7615a0a6ac041a5c373719668652,
     type: 2}
   startDistance: 1
 --- !u!1 &404192894
@@ -3276,7 +3276,7 @@ MonoBehaviour:
   rb: {fileID: 707287959}
   speed: 50
   maxSpeed: 10
-  MaxDistance: 18
+  MaxDistance: 20
   MainShip: {fileID: 219229905}
   offset: 0
 --- !u!54 &707287959
@@ -3349,6 +3349,7 @@ MonoBehaviour:
   Player: {fileID: 1944099967}
   PS: {fileID: 448228835}
   PlayerHealth: {fileID: 157535079}
+  damagePerBullet: 10
   _MyMaterial: {fileID: 2100000, guid: 9ff83b1a8d9b4b04e9d1df0aa1652777, type: 2}
 --- !u!1 &719671242
 GameObject:
@@ -3655,6 +3656,7 @@ MonoBehaviour:
   LevelText: {fileID: 974499392}
   Score: {fileID: 404192895}
   LevelUpSound: {fileID: 8300000, guid: 80336e0019b65d547ae1d8994675b4b8, type: 3}
+  shieldRing: {fileID: 0}
 --- !u!4 &1031565746
 Transform:
   m_ObjectHideFlags: 0
@@ -6997,6 +6999,7 @@ MonoBehaviour:
     type: 2}
   rotateSpeed: 10
   timeBetweenOpenings: 5
+  spinTime: 3
 --- !u!4 &1795084441
 Transform:
   m_ObjectHideFlags: 0
