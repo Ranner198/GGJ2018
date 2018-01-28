@@ -54,6 +54,6 @@ public class Explosion : MonoBehaviour {
         yield return new WaitForSeconds(4);
         GameManager.hasLost = false;
         isDead = false;
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(0);
     }
 }
