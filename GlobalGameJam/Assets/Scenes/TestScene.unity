@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36501133, g: 0.23550874, b: 0.4717998, a: 1}
+  m_IndirectSpecularColor: {r: 0.36502057, g: 0.23545691, b: 0.47182506, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -316,6 +316,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1115313430273196, guid: d5d33f79f44cf47459219cc0cba5f8d9, type: 2}
+  shootTimeMin: 8
+  shootTimeMax: 15
+  shootTime: 0
+  geometricAvg: 0.75
+  anim: {fileID: 219229906}
+  lastSpeed: 1
+  timeUpdate: 0
 --- !u!1 &404192894
 GameObject:
   m_ObjectHideFlags: 0
