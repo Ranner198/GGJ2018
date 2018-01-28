@@ -19,20 +19,20 @@ public class RayTrace : MonoBehaviour {
         //Default
         Upload.text = "Upload: " + Mathf.RoundToInt(UploadPercentage).ToString() + "%";
 
-        PS = GetComponent<ParticleSystem>();
-
         PS.enableEmission = false;
-
     }
 
 	void Update () {
                
         RaycastHit hit;
 
-        var fwd = transform.forward;
+        var fwd = Vector2.left;
+
+        Debug.DrawRay(transform.position, fwd * 20, Color.red);
 
         if (Physics.Raycast(transform.position, fwd, out hit, 20, LayerMask))
         {
+            
             if (hit.collider.gameObject.tag == "BigRing" && UploadPercentage < 100)
             {
                 lr.SetPosition(0, transform.position);
@@ -48,6 +48,9 @@ public class RayTrace : MonoBehaviour {
                 lr.enabled = false;
                 PS.enableEmission = false;
             }
-        }    
+        }
+
+        lr.SetPosition(0, transform.position);
+        lr.enabled = true;
     }
 }

@@ -20,10 +20,5 @@ public class GameManager : MonoBehaviour {
             RayTrace.UploadPercentage = 0;
             LevelText.text = "Level: " + Level.ToString();
         }
-        if (Input.GetKey(KeyCode.P))
-        {
-            hasLost = true;
-        }
-
 	}
 }
