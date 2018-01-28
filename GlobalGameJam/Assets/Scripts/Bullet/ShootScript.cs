@@ -14,6 +14,8 @@ public class ShootScript : MonoBehaviour {
 
     public Transform[] CannonLoc;
 
+    public AudioSource laserSound;
+
     private int index;
     private int i;
 
@@ -32,8 +34,6 @@ public class ShootScript : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
-
-
                 index++;
                 if (index % 2 == 0)
                     i = 1;
@@ -43,12 +43,9 @@ public class ShootScript : MonoBehaviour {
                 Clone.layer = 30;
                 canShoot = false;
                 shootTimer = timer;
+                laserSound.pitch = Random.Range(0.9f, 1.1f);
+                laserSound.Play();
             }
         }
 	}
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision.transform.gameObject);
-    }
 }

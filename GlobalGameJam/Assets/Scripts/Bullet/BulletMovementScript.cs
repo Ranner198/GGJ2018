@@ -6,12 +6,7 @@ public class BulletMovementScript : MonoBehaviour {
 
     public float speed;
 
-    void Start()
-    {
-        Physics.IgnoreLayerCollision(10, 30, true);
-    }
-
-    void Update () {
+	void Update () {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
 	}
 
@@ -26,11 +21,15 @@ public class BulletMovementScript : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        if (coll.gameObject.tag == "ShieldSegment")
+        {
+            Destroy(gameObject);
+        }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "ShieldSegment")
+        if (other.gameObject.tag == "ShieldSegment")
         {
             Destroy(gameObject);
         }
