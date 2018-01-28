@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36501133, g: 0.23550874, b: 0.4717998, a: 1}
+  m_IndirectSpecularColor: {r: 0.36502057, g: 0.23545691, b: 0.47182506, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3349,6 +3349,7 @@ MonoBehaviour:
   Player: {fileID: 1944099967}
   PS: {fileID: 448228835}
   PlayerHealth: {fileID: 157535079}
+  damagePerBullet: 10
   _MyMaterial: {fileID: 2100000, guid: 9ff83b1a8d9b4b04e9d1df0aa1652777, type: 2}
 --- !u!1 &719671242
 GameObject:
@@ -3655,6 +3656,7 @@ MonoBehaviour:
   LevelText: {fileID: 974499392}
   Score: {fileID: 404192895}
   LevelUpSound: {fileID: 8300000, guid: 80336e0019b65d547ae1d8994675b4b8, type: 3}
+  shieldRing: {fileID: 1795084440}
 --- !u!4 &1031565746
 Transform:
   m_ObjectHideFlags: 0
@@ -6997,6 +6999,10 @@ MonoBehaviour:
     type: 2}
   rotateSpeed: 10
   timeBetweenOpenings: 5
+  spinTime: 0.5
+  speedSpinX: 3
+  spinSpeedX: 3
+  spinSpeedY: 1.5
 --- !u!4 &1795084441
 Transform:
   m_ObjectHideFlags: 0
