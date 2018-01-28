@@ -12,7 +12,7 @@ public class MyLeaderboardScript : MonoBehaviour {
     public GUIStyle textStyle;
 
     private bool leaderboardHasLost = false;
-
+    private bool RefreshLeaderboard = false;
 
     public enum GameState
     {
@@ -43,10 +43,12 @@ public class MyLeaderboardScript : MonoBehaviour {
             leaderboardHasLost = true;
         }
 
-        if (SceneControl.Refresh == true)
+        if (SceneControl.Refresh == true && !RefreshLeaderboard)
         {
             gs = GameState.leaderboard;
-            SceneControl.Refresh = false;          
+            SceneControl.Refresh = false;
+            RefreshLeaderboard = true;
+            
         }
 
     }
@@ -75,6 +77,7 @@ public class MyLeaderboardScript : MonoBehaviour {
             if (scoreList == null)
             {
                 GUILayout.Label("(Loading...)");
+                gs = GameState.waiting;
             }
             else
             {
@@ -100,15 +103,10 @@ public class MyLeaderboardScript : MonoBehaviour {
 
                     if (count >= maxToDisplay)
                         break;
-
-                    print(currentScore.playerName);
-                }
-
-
-            }
-
-            //gs = GameState.waiting;
-
+                }                
+            }         
         }
+
+
     }
 }
