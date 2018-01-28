@@ -11,8 +11,14 @@ public class FlightScript : MonoBehaviour {
 
     public Transform MainShip;
 
+    public float offset;
+
 	void Start () {
+        //rigidbody
         rb = GetComponent<Rigidbody>();
+
+        //show mouse cursor
+        Cursor.visible = true;
 	}
 	
 	
@@ -35,7 +41,19 @@ public class FlightScript : MonoBehaviour {
 
         //Vector2 _MainShipLoc = new Vector2(MainShip.transform.position.x, MainShip.transform.position.y);
 
-        transform.LookAt(MainShip.transform.position, Vector3.back);
+        //Look at ship
+        //transform.LookAt(MainShip.transform.position, Vector3.back);
+
+        //Face Towards MousePoint
+        //var mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
+
+        //var mousePosition = Camera.main.ScreenToWorldPoint(mousePos);
+    
+        //print(mousePosition);
+
+        var PlayerPosition = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 Dir = (PlayerPosition - Input.mousePosition).normalized;
+        transform.rotation = Quaternion.Euler (0,0, Mathf.Atan2(Dir.y, Dir.x) * Mathf.Rad2Deg + offset);
 
         //Distance from Ship
         Vector2 currentDistance = transform.position - MainShip.transform.position;
@@ -46,4 +64,9 @@ public class FlightScript : MonoBehaviour {
         }
 
 	}
+
+    void OnMouseEnter()
+    {
+        //Cursor.SetCursor(cur)
+    }
 }
