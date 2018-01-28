@@ -814,7 +814,7 @@ Prefab:
     - target: {fileID: 114618380542970634, guid: 2ae922c7d8b784fc9aac6e923c5a88ab,
         type: 2}
       propertyPath: textStyle.m_FontSize
-      value: 32
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ae922c7d8b784fc9aac6e923c5a88ab, type: 2}
