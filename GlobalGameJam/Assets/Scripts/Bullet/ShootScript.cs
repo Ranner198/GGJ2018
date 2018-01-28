@@ -46,4 +46,9 @@ public class ShootScript : MonoBehaviour {
             }
         }
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.transform.gameObject);
+    }
 }

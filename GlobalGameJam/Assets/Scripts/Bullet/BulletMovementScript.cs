@@ -12,11 +12,16 @@ public class BulletMovementScript : MonoBehaviour {
 
     void OnCollisionEnter(Collision coll)
     {
+        Debug.Log("Hit " + coll.gameObject);
         if (coll.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }
         if (coll.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+        if (coll.gameObject.tag == "ShieldSegment")
         {
             Destroy(gameObject);
         }
