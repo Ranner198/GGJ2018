@@ -11,6 +11,10 @@ public class SceneControl : MonoBehaviour {
     public string _Name;
     public static bool Refresh = false;
 
+    public AudioClip Buzzer;
+
+    public AudioSource Source;
+
     public Animator anim;
 
     public void OnPlay()
@@ -21,10 +25,10 @@ public class SceneControl : MonoBehaviour {
         {
             PlayerPrefs.SetString("Name", _Name);
             SceneManager.LoadScene("TestScene");
-
         }
         else
         {
+            Source.PlayOneShot(Buzzer);
             PlaceHolder.text = "  *Name Required*";
             anim.Stop();
             PlaceHolder.color = Color.red;

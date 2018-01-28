@@ -50,7 +50,10 @@ public class Explosion : MonoBehaviour {
         if (coll.gameObject.layer == 31)
         {
             health -= damagePerBullet;
-            PlayerHealth.text = "Health :" + health.ToString();
+            if (health >= 0)
+            {
+                PlayerHealth.text = "Health :" + health.ToString();
+            }
             StartCoroutine(Flash());
         }
     }
