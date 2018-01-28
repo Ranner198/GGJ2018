@@ -9,6 +9,7 @@ public class MyLeaderboardScript : MonoBehaviour {
 
     public string _PlayerName = "";
     public int _Score = 0;
+    public GUIStyle textStyle;
 
     public enum GameState
     {
@@ -50,7 +51,7 @@ public class MyLeaderboardScript : MonoBehaviour {
     void OnGUI()
     {
         //Font Size
-        GUI.skin.label.fontSize = 20;
+        GUI.skin.label.fontSize = 48;
 
         if (gs == GameState.ended)
         {
@@ -75,30 +76,33 @@ public class MyLeaderboardScript : MonoBehaviour {
             }
             else
             {
-                int maxToDisplay = 15;
+                int maxToDisplay = 10;
                 int count = 0;
 
-                GUILayout.Label("High Scores:");
-
+                float totalHeight = Screen.height / 2;
+                float heightEach = totalHeight / maxToDisplay;
+                textStyle.fontSize = (int)(heightEach * 0.9f);
+                float areaWidth = (Screen.width - 250) / 2;
 
                 foreach (dreamloLeaderBoard.Score currentScore in scoreList)
                 {
                     count++;
 
-                    GUILayout.BeginArea(new Rect((Screen.width / 2) - 200, (Screen.height / 2) + count * 40, 250, 30));                    
+                    GUILayout.BeginArea(new Rect(areaWidth, (Screen.height / 4) + count * 40, 250, 38));                    
                     GUILayout.BeginHorizontal("box");
-                    GUILayout.Label(count + ") ");
-                    GUILayout.Label(currentScore.playerName);
-                    GUILayout.Label(currentScore.score.ToString());                  
+                    GUILayout.Label(count + ") ", textStyle, GUILayout.MinWidth(areaWidth * 0.2f));
+                    GUILayout.Label(currentScore.playerName, textStyle, GUILayout.MinWidth(areaWidth * 0.5f));
+                    GUILayout.Label(currentScore.score.ToString(), textStyle, GUILayout.MinWidth(areaWidth * 0.3f));  
                     GUILayout.EndHorizontal();
                     GUILayout.EndArea();
 
-                    if (count >= maxToDisplay) break;
+                    if (count >= maxToDisplay)
+                        break;
 
                     print(currentScore.playerName);
                 }
 
-                
+
             }
 
             //gs = GameState.waiting;
