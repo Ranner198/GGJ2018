@@ -32,7 +32,7 @@ public class MyLeaderboardScript : MonoBehaviour {
     {
         _PlayerName = PlayerPrefs.GetString("Name");
 
-        _Score = GameManager.Level;
+        _Score = GameManager.TotalScore;
 
         if (GameManager.hasLost == true)
         {

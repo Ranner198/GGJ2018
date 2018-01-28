@@ -57,7 +57,7 @@ public class LeaderBoardSample : MonoBehaviour {
         if (gs == gameState.ended)
         {
             playerName = PlayerPrefs.GetString("Name");
-            totalScore = GameManager.Level;
+            totalScore = GameManager.TotalScore;
 
             if (_MyLeaderBoard.publicCode == "") Debug.LogError("You forgot to set the public Code variable");
             if (_MyLeaderBoard.privateCode == "") Debug.LogError("You forgot to set the private Code variable");

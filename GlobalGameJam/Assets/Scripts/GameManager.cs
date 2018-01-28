@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public static int Level = 1;
+    public int Level = 1;
 
-    public Text LevelText;
+    public static bool isKilled = false;
+
+    private int LevelScore = 0, killed = 0;
+
+    public static int TotalScore;
+
+    public Text LevelText, Score;
 
     public static bool hasLost = false;
 
@@ -19,6 +25,27 @@ public class GameManager : MonoBehaviour {
             Level++;
             RayTrace.UploadPercentage = 0;
             LevelText.text = "Level: " + Level.ToString();
+            LevelUpdate();
         }
+
+        if (isKilled)
+        {
+            Killednum();
+            isKilled = false;
+        }
+
+        TotalScore = killed + LevelScore;
+
+        Score.text = "Score: " + TotalScore.ToString();
 	}
+
+    void LevelUpdate()
+    {
+        LevelScore += (Level * 100);
+    }
+
+    public void Killednum()
+    {
+        killed += 100;
+    }
 }
