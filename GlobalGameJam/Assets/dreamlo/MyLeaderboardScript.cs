@@ -33,9 +33,11 @@ public class MyLeaderboardScript : MonoBehaviour {
         this._MyLeaderBoard = dreamloLeaderBoard.GetSceneDreamloLeaderboard();
 
         _MyLeaderBoard.LoadScores();
+
         if (Application.loadedLevel == 5)
         {
             gs = GameState.leaderboard;
+            print("pull");
         }
 
         if (Application.loadedLevel == 2)
@@ -79,7 +81,7 @@ public class MyLeaderboardScript : MonoBehaviour {
             if (_MyLeaderBoard.privateCode == "") Debug.LogError("You forgot to set the private Code variable");
 
             _MyLeaderBoard.AddScore(_PlayerName, _Score);
-
+            print("upload");
             gs = GameState.waiting;
         }
 

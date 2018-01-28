@@ -24,6 +24,7 @@ public class SceneControl : MonoBehaviour {
         if (_Name != "")
         {
             PlayerPrefs.SetString("Name", _Name);
+            //Refresh = false;
             SceneManager.LoadScene("TestScene");
         }
         else
@@ -52,7 +53,7 @@ public class SceneControl : MonoBehaviour {
 
     public void Leaderboard()
     {
-        SceneManager.LoadScene("LeaderboardScene");
         Refresh = true;
+        SceneManager.LoadScene("LeaderboardScene");        
     }
 }
