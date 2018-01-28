@@ -8,7 +8,14 @@ public class EnemyShootingScript : MonoBehaviour {
 
     private float RandomShoot;
 
-	void Update () {
+    public AudioSource laserSound;
+
+    void Start()
+    {
+        RandomTime();
+    }
+
+    void Update () {
 
         if (!Explosion.isDead)
         {
@@ -24,6 +31,8 @@ public class EnemyShootingScript : MonoBehaviour {
             {
                 GameObject clone = Instantiate(BulletPrefab, transform.position, rot);
                 clone.layer = 31;
+                laserSound.pitch = Random.Range(0.9f, 1.1f);
+                laserSound.Play();
                 RandomTime();
             }
         }

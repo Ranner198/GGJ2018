@@ -20,31 +20,35 @@ public class ShootScript : MonoBehaviour {
     private int i;
 
 	void Update () {
-		if (shootTimer >= 0)
-        {
-            shootTimer -= Time.deltaTime;
-        }
 
-        if (shootTimer <= 0)
+        if (!Explosion.isDead)
         {
-            canShoot = true;
-        }
-
-        if (shootTimer <= 0 && canShoot)
-        {
-            if (Input.GetMouseButtonDown(0))
+            if (shootTimer >= 0)
             {
-                index++;
-                if (index % 2 == 0)
-                    i = 1;
-                else
-                    i = 0;
-                GameObject Clone = Instantiate(BulletPrefab,  new Vector3 (CannonLoc[i].transform.position.x, CannonLoc[i].transform.position.y, 0), transform.rotation);
-                Clone.layer = 30;
-                canShoot = false;
-                shootTimer = timer;
-                laserSound.pitch = Random.Range(0.9f, 1.1f);
-                laserSound.Play();
+                shootTimer -= Time.deltaTime;
+            }
+
+            if (shootTimer <= 0)
+            {
+                canShoot = true;
+            }
+
+            if (shootTimer <= 0 && canShoot)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    index++;
+                    if (index % 2 == 0)
+                        i = 1;
+                    else
+                        i = 0;
+                    GameObject Clone = Instantiate(BulletPrefab, new Vector3(CannonLoc[i].transform.position.x, CannonLoc[i].transform.position.y, 0), transform.rotation);
+                    Clone.layer = 30;
+                    canShoot = false;
+                    shootTimer = timer;
+                    laserSound.pitch = Random.Range(0.9f, 1.1f);
+                    laserSound.Play();
+                }
             }
         }
 	}

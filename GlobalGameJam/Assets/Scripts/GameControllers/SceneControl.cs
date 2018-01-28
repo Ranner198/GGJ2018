@@ -19,6 +19,7 @@ public class SceneControl : MonoBehaviour {
         {
             PlayerPrefs.SetString("Name", _Name);
             SceneManager.LoadScene("TestScene");
+
         }
         else
         {

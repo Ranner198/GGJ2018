@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -26,12 +27,15 @@ public class Explosion : MonoBehaviour {
 
     void Update () {
 
-        if (health <= 0)
+        if ((health <= 0) && !GameManager.hasLost || Input.GetKeyDown(KeyCode.I))
         {
+            PS.Play();
             Player.enabled = false;
+            //PS.Stop();
             PS.enableEmission = true;
             GameManager.hasLost = true;
-            isDead = true;     
+            isDead = true;
+            StartCoroutine(WaitToRestart());
         }
 	}
 
@@ -42,5 +46,12 @@ public class Explosion : MonoBehaviour {
             health -= 25;
             PlayerHealth.text = "Health :" + health.ToString(); ;
         }
+    }
+
+    IEnumerator WaitToRestart()
+    {
+        yield return new WaitForSeconds(4);
+        GameManager.hasLost = false;
+        Application.LoadLevel(Application.loadedLevel);
     }
 }

@@ -11,6 +11,9 @@ public class MyLeaderboardScript : MonoBehaviour {
     public int _Score = 0;
     public GUIStyle textStyle;
 
+    private bool leaderboardHasLost = false;
+
+
     public enum GameState
     {
         waiting,
@@ -34,10 +37,10 @@ public class MyLeaderboardScript : MonoBehaviour {
 
         _Score = GameManager.TotalScore;
 
-        if (GameManager.hasLost == true)
+        if (GameManager.hasLost == true && !leaderboardHasLost)
         {
             gs = GameState.ended;
-            GameManager.hasLost = false;
+            leaderboardHasLost = true;
         }
 
         if (SceneControl.Refresh == true)
@@ -60,8 +63,7 @@ public class MyLeaderboardScript : MonoBehaviour {
 
             _MyLeaderBoard.AddScore(_PlayerName, _Score);
 
-            print("Leaderboards");
-            print(_PlayerName + _Score);
+            gs = GameState.waiting;
         }
 
         if (gs == GameState.leaderboard)
