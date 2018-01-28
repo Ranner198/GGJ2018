@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0130074825, g: 0.013074383, b: 0.0130074825, a: 1}
+  m_IndirectSpecularColor: {r: 0.012997565, g: 0.013137931, b: 0.012997565, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 53620537}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,6 +316,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1115313430273196, guid: d5d33f79f44cf47459219cc0cba5f8d9, type: 2}
+--- !u!1 &404192894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 404192897}
+  - component: {fileID: 404192896}
+  - component: {fileID: 404192895}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &404192895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 404192894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9448277, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 088993b5f02b9dd4788d4053fe5a0b25, type: 3}
+    m_FontSize: 96
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 96
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'Score: 0'
+--- !u!222 &404192896
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 404192894}
+--- !u!224 &404192897
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 404192894}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.22551, y: 0.22548999, z: 0.22548999}
+  m_Children: []
+  m_Father: {fileID: 701382718}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -60, y: -138}
+  m_SizeDelta: {x: 600, y: 109}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &448228832
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +400,7 @@ GameObject:
   - component: {fileID: 448228833}
   - component: {fileID: 448228835}
   - component: {fileID: 448228834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3173,7 +3247,7 @@ Canvas:
   m_GameObject: {fileID: 701382714}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1840269791}
   m_PlaneDistance: 10
   m_PixelPerfect: 0
@@ -3197,6 +3271,7 @@ RectTransform:
   - {fileID: 157535078}
   - {fileID: 1236052393}
   - {fileID: 974499394}
+  - {fileID: 404192897}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3217,9 +3292,9 @@ GameObject:
   - component: {fileID: 707287958}
   - component: {fileID: 707287961}
   - component: {fileID: 707287962}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3318,7 +3393,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 719671243}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3519,6 +3594,10 @@ Prefab:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7e6dadcd68693184bab03e6ace2aa013, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e6dadcd68693184bab03e6ace2aa013, type: 3}
   m_IsPrefabParent: 0
@@ -3607,7 +3686,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2079abda5f048f4cbec9e2ad3f496da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 1
   LevelText: {fileID: 974499392}
+  Score: {fileID: 404192895}
 --- !u!4 &1031565746
 Transform:
   m_ObjectHideFlags: 0
@@ -3745,7 +3826,7 @@ GameObject:
   - component: {fileID: 1210996746}
   - component: {fileID: 1210996747}
   - component: {fileID: 1210996748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletShootScript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4035,7 +4116,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1518067072}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4065,7 +4146,7 @@ GameObject:
   - component: {fileID: 1690339612}
   - component: {fileID: 1690339609}
   - component: {fileID: 1690339610}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6815,6 +6896,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 70aa460289f8ef447aa780d6b359f9e8, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70aa460289f8ef447aa780d6b359f9e8, type: 3}
   m_IsPrefabParent: 0
@@ -6959,7 +7044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1895059717}
   - component: {fileID: 1895059716}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Linerender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
