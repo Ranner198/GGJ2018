@@ -323,8 +323,8 @@ MonoBehaviour:
   anim: {fileID: 219229906}
   lastSpeed: 1
   timeUpdate: 0
-  numberShotsInRing: 20
-  bulletPrefab: {fileID: 1820741785558866, guid: 6167ea4cf9cc0ab4bb0d40a8bb103607,
+  numberShotsInRing: 16
+  bulletPrefab: {fileID: 1123574017255252, guid: b03d7615a0a6ac041a5c373719668652,
     type: 2}
   startDistance: 1
 --- !u!1 &404192894
@@ -3276,7 +3276,7 @@ MonoBehaviour:
   rb: {fileID: 707287959}
   speed: 50
   maxSpeed: 10
-  MaxDistance: 18
+  MaxDistance: 20
   MainShip: {fileID: 219229905}
   offset: 0
 --- !u!54 &707287959

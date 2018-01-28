@@ -11,6 +11,8 @@ public class SceneControl : MonoBehaviour {
     public string _Name;
     public static bool Refresh = false;
 
+    public Animator anim;
+
     public void OnPlay()
     {
         _Name = Name.text;
@@ -23,7 +25,8 @@ public class SceneControl : MonoBehaviour {
         }
         else
         {
-            PlaceHolder.text = "*Name Required*";
+            PlaceHolder.text = "  *Name Required*";
+            anim.Stop();
             PlaceHolder.color = Color.red;
         }
     }
@@ -45,7 +48,7 @@ public class SceneControl : MonoBehaviour {
 
     public void Leaderboard()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("LeaderboardScene");
         Refresh = true;
     }
 }
