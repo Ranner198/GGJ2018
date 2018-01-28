@@ -14,6 +14,7 @@ public class PlayerPingAbility : MonoBehaviour {
 
     private int count = 0;
     public int totalCount;
+    public AudioSource soundScan;
 
     void Start()
     {
@@ -44,6 +45,7 @@ public class PlayerPingAbility : MonoBehaviour {
                 {
                     //ConeTrigger.enabled = true; // disabled for moment
                     StartCoroutine(Ping());
+                    soundScan.Play();
                     canPing = false;
                     timer = 2.25f;
                 }

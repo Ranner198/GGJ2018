@@ -700,7 +700,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -329796820
+  randomSeed: 539704128
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3696,6 +3696,87 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 70aa460289f8ef447aa780d6b359f9e8, type: 3}
   m_PrefabInternal: {fileID: 1783795567}
+--- !u!82 &881100322
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 881100320}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243324180809336102, guid: 59bb0b9ef4817a449929126b5e55e66d,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 1676fa8724b08924c91b4bf766f39d33, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.292
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &881100325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3712,6 +3793,7 @@ MonoBehaviour:
   timer: 0
   ConeTrigger: {fileID: 881100326}
   totalCount: 3
+  soundScan: {fileID: 881100322}
 --- !u!65 &881100326
 BoxCollider:
   m_ObjectHideFlags: 0
