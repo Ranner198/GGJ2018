@@ -20,6 +20,8 @@ public class Explosion : MonoBehaviour {
 
     public Text PlayerHealth;
 
+    public Material _MyMaterial;
+
     void Start()
     {
         PS.enableEmission = false;
@@ -45,7 +47,8 @@ public class Explosion : MonoBehaviour {
         if (coll.gameObject.layer == 31)
         {
             health -= 25;
-            PlayerHealth.text = "Health :" + health.ToString(); ;
+            PlayerHealth.text = "Health :" + health.ToString();
+            StartCoroutine(Flash());
         }
     }
 
@@ -55,5 +58,19 @@ public class Explosion : MonoBehaviour {
         GameManager.hasLost = false;
         isDead = false;
         SceneManager.LoadScene(0);
+    }
+
+    IEnumerator Flash()
+    {     
+        //Call Flash
+        int count = 4;
+
+        for  (int i = 0; i < count; i++)
+        {            
+             _MyMaterial.SetColor("_Emission", Color.white);
+            yield return new WaitForSeconds(.3f);
+            _MyMaterial.SetColor("_Emission", Color.black);
+            yield return new WaitForSeconds(.3f);
+        }  
     }
 }
