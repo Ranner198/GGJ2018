@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour {
 
-	void Start () {
+    public AudioClip ExplosionSoundEffect;
+
+    public AudioSource source;
+
+    void Start () {
         Invoke("Suicide", 3.0f);
 	}
 
     void Suicide()
     {
+        source.PlayOneShot(ExplosionSoundEffect);
         Destroy(gameObject);
     }
 }

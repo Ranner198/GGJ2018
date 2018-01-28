@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 
@@ -31,9 +32,17 @@ public class MyLeaderboardScript : MonoBehaviour {
     {
         this._MyLeaderBoard = dreamloLeaderBoard.GetSceneDreamloLeaderboard();
 
-        //gs = GameState.leaderboard;
+        _MyLeaderBoard.LoadScores();
+        if (Application.loadedLevel == 5)
+        {
+            gs = GameState.leaderboard;
+        }
 
-        _MyLeaderBoard.LoadScores();           
+        if (Application.loadedLevel == 2)
+        {
+            gs = GameState.waiting;
+        }
+     
     }
 
     void Update()
