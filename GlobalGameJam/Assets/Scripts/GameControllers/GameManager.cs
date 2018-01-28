@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
 
     AudioSource audioSource;
 
+    public ShieldRing shieldRing;
+
     void Start() {
         audioSource = GetComponent<AudioSource>();
     }
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour {
 
     void LevelUpdate()
     {
+        shieldRing.Spin();
         LevelScore += (Level * 100);
     }
 

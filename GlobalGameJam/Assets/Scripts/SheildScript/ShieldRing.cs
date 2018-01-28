@@ -11,12 +11,20 @@ public class ShieldRing : MonoBehaviour {
     private float timeTilOpen;
 
     private float switchTimer;
+    public float spinTime = 3.0f;
+    private float spinTimeTotal = 0.0f;
+    private bool doSpin = false;
+    private float spinX = 0;
+    private float spinY = 0;
 
     // Use this for initialization
     void OnEnable()
     {
         CreateRing();
         timeTilOpen = timeBetweenOpenings;
+        spinX = 0;
+        spinY = 0;
+        doSpin = false;
     }
 
     void CreateRing()
@@ -69,6 +77,25 @@ public class ShieldRing : MonoBehaviour {
             Switch();
             rotateSpeed *= -1;
         }
+
+        if (doSpin)
+        {
+
+        }
+        else
+        {
+            if (spinX < 0)
+            {
+                spinX += Time.deltaTime;
+            }
+        }
+        transform.rotation = Quaternion.Euler(spinX, spinY, 0);
+    }
+
+    public void Spin()
+    {
+        doSpin = true;
+        spinTimeTotal = 0.0f;
     }
 
     void Switch()
