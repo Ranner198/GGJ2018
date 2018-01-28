@@ -3689,7 +3689,11 @@ MonoBehaviour:
   Level: 1
   LevelText: {fileID: 974499392}
 <<<<<<< HEAD
+<<<<<<< HEAD
   Score: {fileID: 404192895}
+=======
+  Score: {fileID: 0}
+>>>>>>> 3f478ff8167ffda6923463168dcb9ce40e89d689
 =======
   Score: {fileID: 0}
 >>>>>>> 3f478ff8167ffda6923463168dcb9ce40e89d689
