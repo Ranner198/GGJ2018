@@ -323,6 +323,9 @@ MonoBehaviour:
   anim: {fileID: 219229906}
   lastSpeed: 1
   timeUpdate: 0
+  numberShotsInRing: 20
+  bulletPrefab: {fileID: 1820741785558866, guid: 6167ea4cf9cc0ab4bb0d40a8bb103607,
+    type: 2}
 --- !u!1 &404192894
 GameObject:
   m_ObjectHideFlags: 0
