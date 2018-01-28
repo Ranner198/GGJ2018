@@ -12,7 +12,7 @@ public class RayTrace : MonoBehaviour {
     public Transform Player;
 
     public Text Upload;
-    public static float UploadPercentage;
+    public static float UploadPercentage = 0;
 
     public ParticleSystem PS;
 

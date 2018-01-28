@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour {
@@ -13,6 +14,8 @@ public class Explosion : MonoBehaviour {
     public Renderer Player;
 
     public ParticleSystem PS;
+
+    public Text PlayerHealth;
 
     void Start()
     {
@@ -34,6 +37,7 @@ public class Explosion : MonoBehaviour {
         if (coll.gameObject.layer == 31)
         {
             health -= 25;
+            PlayerHealth.text = "Health :" + health.ToString(); ;
         }
     }
 }

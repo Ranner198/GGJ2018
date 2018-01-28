@@ -249,7 +249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Health: null'
+  m_Text: 'Health: 100'
 --- !u!222 &157535080
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3385,6 +3385,7 @@ MonoBehaviour:
   force: 50
   Player: {fileID: 1944099967}
   PS: {fileID: 448228835}
+  PlayerHealth: {fileID: 157535079}
 --- !u!1 &719671242
 GameObject:
   m_ObjectHideFlags: 0

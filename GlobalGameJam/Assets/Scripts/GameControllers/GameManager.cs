@@ -11,11 +11,19 @@ public class GameManager : MonoBehaviour {
 
     private int LevelScore = 0, killed = 0;
 
-    public static int TotalScore;
+    public static int TotalScore = 0;
 
     public Text LevelText, Score;
 
     public static bool hasLost = false;
+
+    public AudioClip LevelUpSound;
+
+    AudioSource audioSource;
+
+    void Start() {
+        audioSource = GetComponent<AudioSource>();
+    }
 
 	void Update () {
 
@@ -26,6 +34,7 @@ public class GameManager : MonoBehaviour {
             RayTrace.UploadPercentage = 0;
             LevelText.text = "Level: " + Level.ToString();
             LevelUpdate();
+            audioSource.PlayOneShot(LevelUpSound, 1.0f);
         }
 
         if (isKilled)
