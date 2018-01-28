@@ -11,15 +11,18 @@ public class MyLeaderboardScript : MonoBehaviour {
     public int _Score = 0;
     public GUIStyle textStyle;
 
+    public List<dreamloLeaderBoard.Score> scoreList;
+
     private bool leaderboardHasLost = false;
     private bool RefreshLeaderboard = false;
 
     public enum GameState
     {
         waiting,
-        running,
+        LoadScores,
         ended,
         leaderboard
+
     }
 
     public static GameState gs;
@@ -28,7 +31,9 @@ public class MyLeaderboardScript : MonoBehaviour {
     {
         this._MyLeaderBoard = dreamloLeaderBoard.GetSceneDreamloLeaderboard();
 
-        gs = GameState.waiting;
+        //gs = GameState.leaderboard;
+
+        _MyLeaderBoard.LoadScores();           
     }
 
     void Update()
@@ -47,14 +52,15 @@ public class MyLeaderboardScript : MonoBehaviour {
         {
             gs = GameState.leaderboard;
             SceneControl.Refresh = false;
-            RefreshLeaderboard = true;
-            
+            RefreshLeaderboard = true;           
         }
 
     }
 
     void OnGUI()
     {
+        scoreList = _MyLeaderBoard.ToListHighToLow();
+
         //Font Size
         GUI.skin.label.fontSize = 48;
 
@@ -69,15 +75,11 @@ public class MyLeaderboardScript : MonoBehaviour {
         }
 
         if (gs == GameState.leaderboard)
-        {           
-            List<dreamloLeaderBoard.Score> scoreList = _MyLeaderBoard.ToListHighToLow();
-
-            _MyLeaderBoard.LoadScores();
-
+        {          
             if (scoreList == null)
             {
                 GUILayout.Label("(Loading...)");
-                gs = GameState.waiting;
+                //gs = GameState.waiting;
             }
             else
             {
@@ -93,18 +95,19 @@ public class MyLeaderboardScript : MonoBehaviour {
                 {
                     count++;
 
-                    GUILayout.BeginArea(new Rect((Screen.width-350) / 2, ((Screen.height - totalHeight)/2) + count * heightEach, 350, heightEach));                    
+                    GUILayout.BeginArea(new Rect((Screen.width - 350) / 2, ((Screen.height - totalHeight) / 2) + count * heightEach, 350, heightEach));
                     GUILayout.BeginHorizontal("box");
                     GUILayout.Label(count + ") ", textStyle, GUILayout.MinWidth(areaWidth * 0.2f));
                     GUILayout.Label(currentScore.playerName, textStyle, GUILayout.MinWidth(areaWidth * 0.5f));
-                    GUILayout.Label(currentScore.score.ToString(), textStyle, GUILayout.MinWidth(areaWidth * 0.3f));  
+                    GUILayout.Label(currentScore.score.ToString(), textStyle, GUILayout.MinWidth(areaWidth * 0.3f));
                     GUILayout.EndHorizontal();
                     GUILayout.EndArea();
 
                     if (count >= maxToDisplay)
                         break;
-                }                
-            }         
+                }
+            }             
+            
         }
 
 

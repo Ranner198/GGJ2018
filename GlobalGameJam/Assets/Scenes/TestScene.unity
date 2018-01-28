@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36502057, g: 0.23545691, b: 0.47182506, a: 1}
+  m_IndirectSpecularColor: {r: 0.36501133, g: 0.23550874, b: 0.4717998, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -326,6 +326,7 @@ MonoBehaviour:
   numberShotsInRing: 20
   bulletPrefab: {fileID: 1820741785558866, guid: 6167ea4cf9cc0ab4bb0d40a8bb103607,
     type: 2}
+  startDistance: 1
 --- !u!1 &404192894
 GameObject:
   m_ObjectHideFlags: 0
@@ -3348,6 +3349,7 @@ MonoBehaviour:
   Player: {fileID: 1944099967}
   PS: {fileID: 448228835}
   PlayerHealth: {fileID: 157535079}
+  _MyMaterial: {fileID: 2100000, guid: 9ff83b1a8d9b4b04e9d1df0aa1652777, type: 2}
 --- !u!1 &719671242
 GameObject:
   m_ObjectHideFlags: 0
