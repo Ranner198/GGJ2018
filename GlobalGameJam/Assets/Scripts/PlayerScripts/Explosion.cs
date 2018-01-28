@@ -31,7 +31,7 @@ public class Explosion : MonoBehaviour {
 
     void Update () {
 
-        if ((health <= 0) && !GameManager.hasLost || Input.GetKeyDown(KeyCode.I))
+        if ((health <= 0) && !GameManager.hasLost)
         {
             PS.Play();
             Player.enabled = false;
