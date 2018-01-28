@@ -45,7 +45,7 @@ public class PlayerPingAbility : MonoBehaviour {
                     //ConeTrigger.enabled = true; // disabled for moment
                     StartCoroutine(Ping());
                     canPing = false;
-                    timer = 3;
+                    timer = 2.25f;
                 }
             }
         }
