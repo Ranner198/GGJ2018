@@ -36,12 +36,15 @@ public class PlayerPingAbility : MonoBehaviour {
         if (timer <= 1.5f)
             ConeTrigger.enabled = false;
 
-        if (Input.GetKeyDown(KeyCode.Space) && canPing == true)
+        if (Input.GetMouseButtonDown(1))
         {
-            ConeTrigger.enabled = true;
-            StartCoroutine(Ping());
-            canPing = false;
-            timer = 3;
+            if (canPing == true)
+            {
+                ConeTrigger.enabled = true;
+                StartCoroutine(Ping());
+                canPing = false;
+                timer = 3;
+            }
         }
         
 	}
