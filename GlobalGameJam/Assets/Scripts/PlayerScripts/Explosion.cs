@@ -19,6 +19,7 @@ public class Explosion : MonoBehaviour {
     public ParticleSystem PS;
 
     public Text PlayerHealth;
+    public int damagePerBullet = 10;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class Explosion : MonoBehaviour {
     {
         if (coll.gameObject.layer == 31)
         {
-            health -= 25;
+            health -= damagePerBullet;
             PlayerHealth.text = "Health :" + health.ToString(); ;
         }
     }
