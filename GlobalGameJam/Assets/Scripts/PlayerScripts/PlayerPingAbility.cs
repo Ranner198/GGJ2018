@@ -23,30 +23,32 @@ public class PlayerPingAbility : MonoBehaviour {
 
     void Update () {
 
-        if (timer >= 0)
+        if (!Explosion.isDead)
         {
-            timer -= Time.deltaTime;
-        }
-
-        if (timer <= 0)
-        {
-            canPing = true;          
-        }
-
-        if (timer <= 1.5f)
-            ConeTrigger.enabled = false;
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (canPing == true)
+            if (timer >= 0)
             {
-                //ConeTrigger.enabled = true; // disabled for moment
-                StartCoroutine(Ping());
-                canPing = false;
-                timer = 3;
+                timer -= Time.deltaTime;
+            }
+
+            if (timer <= 0)
+            {
+                canPing = true;
+            }
+
+            if (timer <= 1.5f)
+                ConeTrigger.enabled = false;
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (canPing == true)
+                {
+                    //ConeTrigger.enabled = true; // disabled for moment
+                    StartCoroutine(Ping());
+                    canPing = false;
+                    timer = 3;
+                }
             }
         }
-        
 	}
 
     IEnumerator Ping()

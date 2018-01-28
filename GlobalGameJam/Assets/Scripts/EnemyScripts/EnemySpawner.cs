@@ -12,6 +12,9 @@ public class EnemySpawner : MonoBehaviour {
 
     void SpawnEnemies()
     {
-        Instantiate(Enemy, transform.position, transform.rotation);
+        if (!Explosion.isDead)
+        {
+            Instantiate(Enemy, transform.position, transform.rotation);
+        }
     }
 }

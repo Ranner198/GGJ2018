@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3dc055d9bb85bc14f87da6e1c93d3661
-timeCreated: 1517122470
+timeCreated: 1517124146
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -35,16 +35,16 @@ TextureImporter:
     filterMode: 0
     aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
-  spriteExtrude: 0
-  spriteMeshType: 0
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 387, y: 107, z: 392, w: 83}
+  spriteBorder: {x: 525, y: 274, z: 525, w: 215}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -79,6 +79,14 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -86,68 +94,20 @@ TextureImporter:
       name: ButtonsPS_0
       rect:
         serializedVersion: 2
-        x: 392
-        y: 109
-        width: 1325
-        height: 1308
-      alignment: 9
-      pivot: {x: 0.2689257, y: 0.75418174}
-      border: {x: 88, y: 123, z: 93, w: 84}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ButtonsPS_1
-      rect:
-        serializedVersion: 2
-        x: 1618
-        y: 87
-        width: 207
-        height: 1330
+        x: 397
+        y: 110
+        width: 1306
+        height: 1306
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 71, y: 72, z: 71, w: 70}
       outline: []
       tessellationDetail: 0
-    - serializedVersion: 2
-      name: ButtonsPS_2
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 74
-        width: 1511
-        height: 151
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ButtonsPS_3
-      rect:
-        serializedVersion: 2
-        x: 297
-        y: 111
-        width: 181
-        height: 1338
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ButtonsPS_4
-      rect:
-        serializedVersion: 2
-        x: 253
-        y: 1337
-        width: 1613
-        height: 138
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    outline: []
+    outline:
+    - - {x: -1050, y: -750}
+      - {x: -1050, y: 750}
+      - {x: 1050, y: 750}
+      - {x: 1050, y: -750}
   spritePackingTag: 
   userData: 
   assetBundleName: 

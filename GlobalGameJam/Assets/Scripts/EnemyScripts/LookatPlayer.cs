@@ -12,8 +12,9 @@ public class LookatPlayer : MonoBehaviour {
     }
 
 	void Update () {
-
-        transform.LookAt(Player.position, Vector3.back);
-
+        if (!Explosion.isDead)
+        {
+            transform.LookAt(Player.position, Vector3.back);
+        }   
     }
 }

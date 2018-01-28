@@ -25,32 +25,34 @@ public class RayTrace : MonoBehaviour {
     }
 
 	void Update () {
-               
-        RaycastHit hit;
 
-        var fwd = -Player.right;
-
-        Debug.DrawRay(transform.position, fwd * 200, Color.red);
-
-        if (Physics.Raycast(transform.position, fwd, out hit, 200, LayerMask))
+        if (!Explosion.isDead)
         {
-            //print(hit.transform.gameObject.tag);
-            if (hit.collider.gameObject.tag == "BigRing" && UploadPercentage < 100)
-            {
-                lr.SetPosition(0, transform.position);
-                lr.enabled = true;
-                UploadPercentage += .25f;
+            RaycastHit hit;
 
-                Upload.text = "Upload: " + Mathf.RoundToInt(UploadPercentage).ToString() + "%";
+            var fwd = -Player.right;
 
-                PS.enableEmission = true;
-            }
-            else
+            Debug.DrawRay(transform.position, fwd * 200, Color.red);
+
+            if (Physics.Raycast(transform.position, fwd, out hit, 200, LayerMask))
             {
-                lr.enabled = false;
-                PS.enableEmission = false;
+                //print(hit.transform.gameObject.tag);
+                if (hit.collider.gameObject.tag == "BigRing" && UploadPercentage < 100)
+                {
+                    lr.SetPosition(0, transform.position);
+                    lr.enabled = true;
+                    UploadPercentage += .25f;
+
+                    Upload.text = "Upload: " + Mathf.RoundToInt(UploadPercentage).ToString() + "%";
+
+                    PS.enableEmission = true;
+                }
+                else
+                {
+                    lr.enabled = false;
+                    PS.enableEmission = false;
+                }
             }
         }
-
     }
 }

@@ -9,6 +9,8 @@ public class Explosion : MonoBehaviour {
 
     public int health = 100;
 
+    public static bool isDead = false; 
+
     public float force;
 
     public Renderer Player;
@@ -28,7 +30,8 @@ public class Explosion : MonoBehaviour {
         {
             Player.enabled = false;
             PS.enableEmission = true;
-            GameManager.hasLost = true;           
+            GameManager.hasLost = true;
+            isDead = true;     
         }
 	}
 
