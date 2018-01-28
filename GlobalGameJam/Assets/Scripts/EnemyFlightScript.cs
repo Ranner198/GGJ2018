@@ -10,8 +10,6 @@ public class EnemyFlightScript : MonoBehaviour {
 
     public float Speed;
 
-    public int health = 100;
-
 	void Start () {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
@@ -45,6 +43,8 @@ public class EnemyFlightScript : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Bullet")
         {
+            GameManager.isKilled = true;
+            //Call Explosion
             Destroy(gameObject);
         }
     }
