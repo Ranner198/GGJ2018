@@ -9,6 +9,8 @@ public class RayTrace : MonoBehaviour {
 
     public LineRenderer lr;
 
+    public Transform Player;
+
     public Text Upload;
     public static float UploadPercentage;
 
@@ -26,15 +28,16 @@ public class RayTrace : MonoBehaviour {
                
         RaycastHit hit;
 
-        var fwd = Vector2.left;
+        var fwd = -Player.right;
 
-        Debug.DrawRay(transform.position, fwd * 20, Color.red);
+        Debug.DrawRay(transform.position, fwd * 200, Color.red);
 
-        if (Physics.Raycast(transform.position, fwd, out hit, 20, LayerMask))
+        if (Physics.Raycast(transform.position, fwd, out hit, 200, LayerMask))
         {
-            
+            //print(hit.transform.gameObject.tag);
             if (hit.collider.gameObject.tag == "BigRing" && UploadPercentage < 100)
             {
+                print("hit");
                 lr.SetPosition(0, transform.position);
                 lr.enabled = true;
                 UploadPercentage += .25f;
