@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 
         //Next Level
-        if (RayTrace.UploadPercentage >= 100)
+        if ((RayTrace.UploadPercentage >= 100) || (Input.GetKeyDown(KeyCode.L)))
         {
             Level++;
             RayTrace.UploadPercentage = 0;
