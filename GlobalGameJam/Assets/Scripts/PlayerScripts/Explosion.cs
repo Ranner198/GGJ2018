@@ -37,6 +37,7 @@ public class Explosion : MonoBehaviour {
             isDead = true;
             StartCoroutine(WaitToRestart());
         }
+        
 	}
 
     private void OnCollisionEnter(Collision coll)
@@ -52,6 +53,7 @@ public class Explosion : MonoBehaviour {
     {
         yield return new WaitForSeconds(4);
         GameManager.hasLost = false;
+        isDead = false;
         Application.LoadLevel(Application.loadedLevel);
     }
 }

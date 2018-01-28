@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour {
 
 	void Update () {
 
+        print(hasLost);
+
         //Next Level
         if (RayTrace.UploadPercentage >= 100)
         {

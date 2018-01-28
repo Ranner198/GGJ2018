@@ -19,7 +19,7 @@ public class RayTrace : MonoBehaviour {
     void Start()
     {
         //Default
-        Upload.text = "Upload: " + Mathf.RoundToInt(UploadPercentage).ToString() + "%";
+        Upload.text = "Upload: " + 0 + "%";
 
         PS.enableEmission = false;
     }
