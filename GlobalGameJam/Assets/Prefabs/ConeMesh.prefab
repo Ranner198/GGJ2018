@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33205074496080186}
   - component: {fileID: 23185545959339934}
   - component: {fileID: 114149668650594072}
+  - component: {fileID: 64979252865133918}
   m_Layer: 0
   m_Name: ConeMesh
   m_TagString: Ring
@@ -79,6 +80,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1652997638702172}
+  m_Mesh: {fileID: 4300002, guid: 22ba8e1eb65730a42ba5a009f3a38a47, type: 3}
+--- !u!64 &64979252865133918
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1652997638702172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 22ba8e1eb65730a42ba5a009f3a38a47, type: 3}
 --- !u!114 &114149668650594072
 MonoBehaviour:
