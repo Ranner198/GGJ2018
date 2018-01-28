@@ -79,16 +79,16 @@ public class MyLeaderboardScript : MonoBehaviour {
                 int maxToDisplay = 10;
                 int count = 0;
 
-                float totalHeight = Screen.height / 2;
+                float totalHeight = Screen.height * 0.66f;
                 float heightEach = totalHeight / maxToDisplay;
-                textStyle.fontSize = (int)(heightEach * 0.9f);
+                textStyle.fontSize = (int)(heightEach * 0.6f);
                 float areaWidth = (Screen.width - 250) / 2;
 
                 foreach (dreamloLeaderBoard.Score currentScore in scoreList)
                 {
                     count++;
 
-                    GUILayout.BeginArea(new Rect(areaWidth, (Screen.height / 4) + count * 40, 250, 38));                    
+                    GUILayout.BeginArea(new Rect((Screen.width-250) / 2, ((Screen.height - totalHeight)/2) + count * heightEach, 250, heightEach));                    
                     GUILayout.BeginHorizontal("box");
                     GUILayout.Label(count + ") ", textStyle, GUILayout.MinWidth(areaWidth * 0.2f));
                     GUILayout.Label(currentScore.playerName, textStyle, GUILayout.MinWidth(areaWidth * 0.5f));
