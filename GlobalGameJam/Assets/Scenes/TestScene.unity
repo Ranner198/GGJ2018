@@ -525,7 +525,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 732413517
+  randomSeed: 832968458
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3688,7 +3688,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 1
   LevelText: {fileID: 974499392}
+<<<<<<< HEAD
   Score: {fileID: 404192895}
+=======
+  Score: {fileID: 0}
+>>>>>>> 3f478ff8167ffda6923463168dcb9ce40e89d689
 --- !u!4 &1031565746
 Transform:
   m_ObjectHideFlags: 0
@@ -4033,6 +4037,7 @@ GameObject:
   - component: {fileID: 1315050411}
   - component: {fileID: 1315050410}
   - component: {fileID: 1315050409}
+  - component: {fileID: 1315050414}
   m_Layer: 0
   m_Name: Camera3D
   m_TagString: MainCamera
@@ -4108,6 +4113,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -52, y: 0, z: 0}
+--- !u!114 &1315050414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1315050408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf17d57d0a3580c428fe09c9a23bebe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerLocation: {fileID: 707287960}
+  MotherShipLocation: {fileID: 219229905}
+  percentAwayFromMother: 0.25
 --- !u!1 &1518067071
 GameObject:
   m_ObjectHideFlags: 0
@@ -4205,10 +4224,10 @@ ParticleSystem:
       m_PostInfinity: 2
       m_RotationOrder: 4
     minMaxState: 0
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1609324698
+  randomSeed: 617546168
   InitialModule:
     serializedVersion: 3
     enabled: 1

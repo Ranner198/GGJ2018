@@ -82,13 +82,13 @@ public class MyLeaderboardScript : MonoBehaviour {
                 float totalHeight = Screen.height * 0.66f;
                 float heightEach = totalHeight / maxToDisplay;
                 textStyle.fontSize = (int)(heightEach * 0.6f);
-                float areaWidth = (Screen.width - 250) / 2;
+                float areaWidth = 350;
 
                 foreach (dreamloLeaderBoard.Score currentScore in scoreList)
                 {
                     count++;
 
-                    GUILayout.BeginArea(new Rect((Screen.width-250) / 2, ((Screen.height - totalHeight)/2) + count * heightEach, 250, heightEach));                    
+                    GUILayout.BeginArea(new Rect((Screen.width-350) / 2, ((Screen.height - totalHeight)/2) + count * heightEach, 350, heightEach));                    
                     GUILayout.BeginHorizontal("box");
                     GUILayout.Label(count + ") ", textStyle, GUILayout.MinWidth(areaWidth * 0.2f));
                     GUILayout.Label(currentScore.playerName, textStyle, GUILayout.MinWidth(areaWidth * 0.5f));
