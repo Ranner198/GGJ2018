@@ -689,6 +689,7 @@ MonoBehaviour:
   rb: {fileID: 54522208240694950}
   Player: {fileID: 0}
   Speed: 12
+  PS: {fileID: 1955275860669706, guid: 40f511b649e193743aa52bbbe2054153, type: 2}
 --- !u!114 &114740732777077852
 MonoBehaviour:
   m_ObjectHideFlags: 1

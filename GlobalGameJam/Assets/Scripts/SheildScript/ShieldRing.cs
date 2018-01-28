@@ -10,6 +10,8 @@ public class ShieldRing : MonoBehaviour {
     public float timeBetweenOpenings;
     private float timeTilOpen;
 
+    private float switchTimer;
+
     // Use this for initialization
     void OnEnable()
     {
@@ -56,5 +58,21 @@ public class ShieldRing : MonoBehaviour {
         }
 
         transform.position = new Vector3(0, 0, 0);
+
+        if (switchTimer >= 0)
+        {
+            switchTimer -= Time.deltaTime;
+        }
+
+        if (switchTimer <= 0)
+        {
+            Switch();
+            rotateSpeed *= -1;
+        }
+    }
+
+    void Switch()
+    {
+        switchTimer = Random.Range(7, 25);
     }
 }
