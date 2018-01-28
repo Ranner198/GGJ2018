@@ -10,6 +10,8 @@ public class EnemyFlightScript : MonoBehaviour {
 
     public float Speed;
 
+    public GameObject PS;
+
 	void Start () {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
@@ -49,6 +51,7 @@ public class EnemyFlightScript : MonoBehaviour {
         {
             GameManager.isKilled = true;
             //Call Explosion
+            Instantiate(PS, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
