@@ -19,9 +19,9 @@ public class Explosion : MonoBehaviour {
         PS.enableEmission = false;
     }
 
-    void FixedUpdate () {
+    void Update () {
 
-        if (health <= 0)
+        if (health <= 0 || Input.GetKeyDown(KeyCode.I))
         {
             Player.enabled = false;
             PS.enableEmission = true;

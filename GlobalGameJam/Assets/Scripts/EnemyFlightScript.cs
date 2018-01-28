@@ -10,6 +10,8 @@ public class EnemyFlightScript : MonoBehaviour {
 
     public float Speed;
 
+    public int health = 100;
+
 	void Start () {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
@@ -37,6 +39,13 @@ public class EnemyFlightScript : MonoBehaviour {
         }
 
         transform.LookAt(Player.position, Vector3.back);
+    }
 
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114740732777077852}
   - component: {fileID: 54522208240694950}
   - component: {fileID: 114671840080484748}
+  - component: {fileID: 65650910663441014}
   m_Layer: 8
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -242,7 +243,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115313430273196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.1490483, y: -2.4259703, z: 0}
+  m_LocalPosition: {x: 18.330626, y: -5.5057864, z: -0.655375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4058330486060434}
@@ -549,6 +550,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3, y: 1, z: 3.2}
   m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!65 &65650910663441014
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115313430273196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 2, z: 1}
+  m_Center: {x: 0, y: -0.75, z: 0}
 --- !u!95 &95363312833302398
 Animator:
   serializedVersion: 3
@@ -580,6 +593,7 @@ MonoBehaviour:
   rb: {fileID: 54522208240694950}
   Player: {fileID: 0}
   Speed: 12
+  health: 100
 --- !u!114 &114740732777077852
 MonoBehaviour:
   m_ObjectHideFlags: 1

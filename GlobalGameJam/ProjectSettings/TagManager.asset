@@ -7,6 +7,7 @@ TagManager:
   - Ring
   - BigRing
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -20,6 +21,7 @@ TagManager:
   - Shield
   - Player
   - SpaceShip
+  - Bullet
   - 
   - 
   - 
@@ -37,9 +39,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - PlayerNoCollition
+  - EnemyNoCollition
   m_SortingLayers:
   - name: Default
     uniqueID: 0
