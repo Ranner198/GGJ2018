@@ -34,7 +34,6 @@ public class Explosion : MonoBehaviour {
         if (coll.gameObject.layer == 31)
         {
             health -= 25;
-            print("OOf");
         }
     }
 }
