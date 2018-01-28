@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour {
     public int numberShotsInRing = 15;
     public GameObject bulletPrefab;
     public float startDistance = 1.0f;
+    public AudioSource soundRingShoot;
 
 	void Start () {
         InvokeRepeating("SpawnEnemies", 6, 6);
@@ -48,6 +49,7 @@ public class EnemySpawner : MonoBehaviour {
     {
         float targetSpeed = anim.speed;
         float delta = Time.deltaTime;
+        float oldTime = shootTime;
         if (delta > 0.5f)
             delta = 0.5f;
 
@@ -61,6 +63,10 @@ public class EnemySpawner : MonoBehaviour {
             ShootEverywhere();
         }
 
+        if ((oldTime >= 0.75f) && (shootTime < 0.75f))
+        {
+            soundRingShoot.Play();
+        }
         if (shootTime < 3.0f)
         {
             if (shootTime < 1.0f)

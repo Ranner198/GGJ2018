@@ -22,6 +22,7 @@ public class Explosion : MonoBehaviour {
     public int damagePerBullet = 10;
 
     public Material _MyMaterial;
+    public AudioSource soundExplode;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class Explosion : MonoBehaviour {
             PS.enableEmission = true;
             GameManager.hasLost = true;
             isDead = true;
+            soundExplode.Play();
             StartCoroutine(WaitToRestart());
         }
         
