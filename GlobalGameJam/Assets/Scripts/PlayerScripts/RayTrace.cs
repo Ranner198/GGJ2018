@@ -26,7 +26,7 @@ public class RayTrace : MonoBehaviour {
 
 	void Update () {
 
-        if (!Explosion.isDead)
+        if ((!Explosion.isDead) && (!GameManager.spinning))
         {
             RaycastHit hit;
 

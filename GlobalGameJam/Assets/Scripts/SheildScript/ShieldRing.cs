@@ -20,6 +20,7 @@ public class ShieldRing : MonoBehaviour {
 
     public float spinSpeedX = 3.0f;
     public float spinSpeedY = 1.5f;
+    public GameObject protectSphere;
 
     // Use this for initialization
     void OnEnable()
@@ -29,6 +30,7 @@ public class ShieldRing : MonoBehaviour {
         spinX = 0;
         spinY = 0;
         doSpin = false;
+        protectSphere.SetActive(false);
     }
 
     void CreateRing()
@@ -82,7 +84,8 @@ public class ShieldRing : MonoBehaviour {
             rotateSpeed *= -1;
         }
 
-        Debug.Log(doSpin);
+        protectSphere.SetActive(doSpin);
+        GameManager.spinning = doSpin;
         if (doSpin)
         {
             spinX += spinSpeedX;
