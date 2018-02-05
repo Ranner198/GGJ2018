@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+h1{
+color: black;
+}
+
+span{
+color: red;
+}
+
+.TitleName{
+	border-width:5px;  
+	border-style: groove;
+	border-color:  #afafaf;
+}
+
+body{
+	background: linear-gradient(#0083FF, #00F3FF);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	margin: 0;
+	padding: 12px 30px 4px;
+}
+
+.box{
+	border: 1px solid red;
+	background-color: #1ef8ff;
+}
+
+.tabed{
+	text-align: left;
+	padding-left: 3cm;
+	}
+
+
+<!--Tab CSS-->
+.tab{
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+
+.tab button:active{
+	background-color: #0acbd1;
+}
+
+.tabcontent{
+	color: white;
+	display: none;
+	padding: 50px;
+	text-align: center;
+}
+
+.Textpadding{
+	padding: 15px;
+	text-align: center;
+}
+
+.gameBorder{
+	margin: 30px;
+	border: 3px solid #00ffd4;
+	float: left;
+	width: 180px;
+}
+
+</style>
+
+<body>
+<head>
+<title>ZedHead_Studios</title>
+</head>
+
+<div>
+	<h1 align = "center" style="font-size:95px;"><span>Zed</span>Head Studios</h1>
+</div>
+
+
+
+
+<!-- Tab Declation -->
+<div class="tab" class="tabcontent" align = "center">
+<button class="Games" onclick="openLink(event, 'Games')">Games</button>
+<button class="Info" onclick="openLink(event, 'Info')">Info</button>
+<button class="ContactInfo" onclick="openLink(event, 'ContactInfo')">Contact Info</button>
+
+<!-- Content -->
+<div id="Games" class="TabBoxes" class="w3-container city w3-animate-right">
+
+	<h1>Click a box below to launch: </h1>
+	
+	<div class="gameBorder">
+	<a href="https://ranner198.itch.io/tiny-zombie-house"><img src="https://thumb.ibb.co/euO7RH/Game_World_Scaled_Up.png" alt="Game_World_Scaled_Up" border="0"></a>
+	<div class="Textpadding">Tiny Zombie House</div>
+	</div>
+	
+	<div class="gameBorder">
+	<a href="https://ranner198.itch.io/pingnation"><img src="https://thumb.ibb.co/k3H1mH/Start_Screen.png" alt="Start_Screen" border="0"></a>
+	<div class="Textpadding">Ping Nation</div>
+	</div>
+	
+	<div class="gameBorder">
+	<a href="https://ranner198.itch.io/stacking-simulator"><img src="https://thumb.ibb.co/mBqnRH/Stacking_Simulator.png" alt="Stacking_Simulator" border="0"></a>
+	<div class="Textpadding">Stacking Simulator</div>
+	</div>
+	
+</div>
+
+<div id="Info" class="TabBoxes" class="w3-container city w3-animate-top" style="display:none">
+	<h3>Info</h3>
+</div>
+
+<div id="ContactInfo" class="TabBoxes" class="w3-container city w3-animate-left" style="display:none">
+	<h1><span>Contact</span> Info</h1>
+	
+	<h4> Hello, and welcome to ZedHead Studios. We are a group of indie-game developers that specialise in all sorts of different fields.</h4>
+	<br> </br>
+	<h1 align="center"><span>Our</span> Team:</h1>
+	<br></br>
+	<div class="box tabed">
+	<h3>Ran Crump - Programmer/Technical Art Specialist</h3>
+	<p>Ran is one of the founding memebers of ZedHead Studios. Ran started out programming for his first time back in 2014, he still remebers his "Hello World" programs. He moved to UAH in 2016 to pursue
+	Art/Animation and Game Design.</p>
+	</div>
+	
+	
+</div>
+
+
+<script>
+function openLink(evt, TabBoxesName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("TabBoxes");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+
+  document.getElementById(TabBoxesName).style.display = "block";
+}
+
+<!--> var btn = document,getElementById("myBtn"); <-->
+
+var width = screen.width;
+
+
+
+</script>
+
+</body>
+</html>
